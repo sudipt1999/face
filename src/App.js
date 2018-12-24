@@ -52,7 +52,7 @@ class App extends Component {
   onChangeEventHandler = (event) => {
     console.log(event.target.value);
     const url = event.target.value;
-    this.setState({ input: url, imageUrl: url });
+    this.setState({ input: url, imageUrl: url, box: [] });
   }
 
   calculateFaceLocation = (data) => {
