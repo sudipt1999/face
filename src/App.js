@@ -96,7 +96,8 @@ class App extends Component {
         if (data.user) {
           this.setState({
             user: data.user,
-            loading: false
+            loading: false,
+            box: []
           })
 
         }
