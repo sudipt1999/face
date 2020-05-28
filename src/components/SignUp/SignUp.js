@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import url from '../../url'
 class SignUp extends Component {
 
     state = {
@@ -29,7 +30,7 @@ class SignUp extends Component {
 
     registerHandlerMethod = (event) => {
         event.preventDefault();
-        fetch('https://damp-falls-23580.herokuapp.com/signUp', {
+        fetch(`${url}signUp`, {
             method: 'post',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({

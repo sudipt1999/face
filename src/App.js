@@ -12,7 +12,7 @@ import Aux from './components/hoc/hocAux';
 import Spinner from './components/Spinner/Spinner';
 import './App.css';
 
-
+import url from './url'
 
 const app = new Clarifai.App({
   apiKey: '1e54b9db0baf466e8f09fdc2528d54a0'
@@ -81,7 +81,7 @@ class App extends Component {
 
   updateUserEntries = () => {
     console.log(this.state.user.id);
-    fetch('https://damp-falls-23580.herokuapp.com/image', {
+    fetch(`${url}image`, {
       method: 'put',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
@@ -119,7 +119,7 @@ class App extends Component {
       console.log(response);
       const data = response.outputs[0].data.regions;
       this.displayFaceBox(this.calculateFaceLocation(data));
-      this.updateUserEntries();
+      //this.updateUserEntries();
     }).catch((e) => {
       this.setState({ loading: false })
       console.log(e);
